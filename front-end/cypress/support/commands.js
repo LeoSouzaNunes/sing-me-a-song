@@ -23,3 +23,39 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("resetDatabase", () => {
+    cy.request("POST", "http://localhost:5000/reset-database").as(
+        "resetDatabase"
+    );
+    cy.get("@resetDatabase").should((response) => {
+        expect(response.status).to.eq(200);
+    });
+});
+
+Cypress.Commands.add("createRecommendationsByAmount", (amount) => {
+    const recommendationArray = [
+        {
+            name: "Rosa Morena",
+            youtubeLink: "https://www.youtube.com/watch?v=P4DWLag9c_Y",
+        },
+        {
+            name: "Águas de Março",
+            youtubeLink: "https://www.youtube.com/watch?v=BnB1G63XvCQ",
+        },
+        {
+            name: "Meu Lugar",
+            youtubeLink: "https://www.youtube.com/watch?v=tSRdBFSvuKI",
+        },
+    ];
+
+    for (let i = 0; i < amount; i++) {
+        const element = recommendationArray[i];
+        cy.request("POST", "http://localhost:5000/recommendations", element).as(
+            "createRecommendation"
+        );
+        cy.get("@createRecommendation").should((response) => {
+            expect(response.status).to.eq(201);
+        });
+    }
+});
