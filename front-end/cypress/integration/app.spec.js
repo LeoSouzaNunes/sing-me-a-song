@@ -34,6 +34,26 @@ describe("Test app", () => {
             cy.visit("http://localhost:3000/");
             cy.get("#top").click();
             cy.url().should("eq", "http://localhost:3000/top");
+
+            cy.get(".Águas-de-Março #up").dblclick();
+            cy.get(".Águas-de-Março #up").dblclick();
+
+            cy.get(".Rosa-Morena #up").dblclick();
+
+            cy.get(".Meu-Lugar #up").click();
+            cy.get(".Rosa-Morena #down").dblclick();
+        });
+
+        it("should test random recommendation", () => {
+            cy.createRecommendationsByAmount(3);
+
+            cy.visit("http://localhost:3000/");
+            cy.get("#random").click();
+            cy.url().should("eq", "http://localhost:3000/random");
+
+            cy.contains(/Rosa Morena|Águas de Março|Meu Lugar/).should(
+                "be.visible"
+            );
         });
     });
 });
