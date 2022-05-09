@@ -196,11 +196,11 @@ describe("Test recommendationService", () => {
             expect(result.name).toMatch(/fake1|fake2/);
         });
 
-        it("should return random recommendation lt", async () => {
+        it("should return random recommendation lte", async () => {
             jest.spyOn(
                 recommendationService,
                 "returnMathRandom"
-            ).mockReturnValue(0.8);
+            ).mockReturnValue(0.71);
 
             jest.spyOn(recommendationRepository, "findAll").mockResolvedValue([
                 {

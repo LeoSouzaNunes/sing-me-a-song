@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652071940140" clover="3.2.0">
-  <project timestamp="1652071940140" name="All files">
+<coverage generated="1652072307104" clover="3.2.0">
+  <project timestamp="1652072307104" name="All files">
     <metrics statements="120" coveredstatements="113" conditionals="31" coveredconditionals="22" methods="41" coveredmethods="37" elements="192" coveredelements="172" complexity="0" loc="120" ncloc="120" packages="9" files="14" classes="14"/>
     <package name="src">
       <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
@@ -68,10 +68,10 @@
       <file name="recommendationRepository.ts" path="/home/leonardo/Projetos/sing-me-a-song/back-end/src/repositories/recommendationRepository.ts">
         <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="8"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="36" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="36" count="5" type="cond" truecount="1" falsecount="0"/>
         <line num="38" count="2" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
         <line num="46" count="9" type="stmt"/>
@@ -141,11 +141,11 @@
         <line num="65" count="8" type="stmt"/>
         <line num="69" count="5" type="stmt"/>
         <line num="74" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="75" count="3" type="stmt"/>
-        <line num="78" count="2" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="78" count="3" type="stmt"/>
         <line num="82" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="83" count="3" type="stmt"/>
-        <line num="86" count="2" type="stmt"/>
+        <line num="83" count="4" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
         <line num="89" count="2" type="stmt"/>
       </file>
       <file name="testsService.ts" path="/home/leonardo/Projetos/sing-me-a-song/back-end/src/services/testsService.ts">
