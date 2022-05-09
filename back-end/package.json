@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "nodemon src/server.ts",
         "test:e2e": "NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test nodemon src/server.ts",
-        "test": "NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -i"
+        "test": "NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -i -- --coverage"
     },
     "keywords": [],
     "author": "",

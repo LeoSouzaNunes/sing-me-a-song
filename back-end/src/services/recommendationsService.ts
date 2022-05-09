@@ -49,7 +49,7 @@ async function getTop(amount: number) {
 }
 
 async function getRandom() {
-    const random = Math.random();
+    const random = returnMathRandom();
     const scoreFilter = getScoreFilter(random);
 
     const recommendations = await getByScore(scoreFilter);
@@ -57,8 +57,12 @@ async function getRandom() {
         throw notFoundError();
     }
 
-    const randomIndex = Math.floor(Math.random() * recommendations.length);
+    const randomIndex = Math.floor(returnMathRandom() * recommendations.length);
     return recommendations[randomIndex];
+}
+
+function returnMathRandom() {
+    return Math.random();
 }
 
 async function getByScore(scoreFilter: "gt" | "lte") {
@@ -90,4 +94,5 @@ export const recommendationService = {
     get,
     getById: getByIdOrFail,
     getTop,
+    returnMathRandom,
 };

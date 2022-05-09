@@ -82,7 +82,7 @@ describe("App integration tests", () => {
 
     describe("GET /recommendations", () => {
         it("should get an array with 10 recommendations", async () => {
-            await recommendationFactory.createRandomRecommendationSample(11);
+            await recommendationFactory.createRandomRecommendationSample(15);
             const response = await supertest(app).get("/recommendations");
             expect(response.body.length).toEqual(10);
         });
