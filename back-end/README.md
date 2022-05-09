@@ -1,14 +1,10 @@
 ## Introduction
 
-An anonymous songs recommendation app where you can post your favorite song from youtube videos!
-
-<span>
-  VIDEO HERE
-<span/>
+An anonymous songs recommendation api where you can post your favorite song from youtube videos!
 
 ## About
 
-The following features are available:
+The following endpoints are available:
 
 -   Add song recommendation.
 -   Up and down votes on recommendations.
@@ -24,8 +20,6 @@ The following features are available:
 
 ## How to run
 
-Firstly you will need to run the [back-end](https://github.com/LeoSouzaNunes/sing-me-a-song/tree/main/back-end), then just follow the next steps.
-
 1. Clone this repository
 
 2. Install dependencies
@@ -37,17 +31,31 @@ npm i
 3. Add .env file on the root with the following content
 
 ```bash
-REACT_APP_API_BASE_URL=http://localhost:5000
+DATABASE_URL=postgres://postgres:123456@localhost:5432/sing-me-a-song
+NODE_ENV=development
 ```
 
-4.  Run the application with
+4. Add .env.test file on the root with the following content
 
 ```bash
-npm run start
+DATABASE_URL=postgres://postgres:123456@localhost:5432/sing-me-a-song-test
+NODE_ENV=test
 ```
 
-5. To test the app just run
+5.  Run the application with
 
 ```bash
-npx cypress open
+npm run dev
+```
+
+6. In case you gonna test the back-end run
+
+```bash
+npm test
+```
+
+7. If you're running the end to end test we recommend you to run
+
+```bash
+npm run test:e2e
 ```
