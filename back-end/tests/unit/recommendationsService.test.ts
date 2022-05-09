@@ -171,11 +171,36 @@ describe("Test recommendationService", () => {
             );
         });
 
-        it("should return random recommendation", async () => {
+        it("should return random recommendation gt", async () => {
             jest.spyOn(
                 recommendationService,
                 "returnMathRandom"
             ).mockReturnValue(0.69);
+
+            jest.spyOn(recommendationRepository, "findAll").mockResolvedValue([
+                {
+                    id: 1,
+                    name: "fake1",
+                    youtubeLink: "fake",
+                    score: -5,
+                },
+                {
+                    id: 1,
+                    name: "fake2",
+                    youtubeLink: "fake",
+                    score: -5,
+                },
+            ]);
+
+            const result = await recommendationService.getRandom();
+            expect(result.name).toMatch(/fake1|fake2/);
+        });
+
+        it("should return random recommendation lt", async () => {
+            jest.spyOn(
+                recommendationService,
+                "returnMathRandom"
+            ).mockReturnValue(0.8);
 
             jest.spyOn(recommendationRepository, "findAll").mockResolvedValue([
                 {
