@@ -1,4 +1,4 @@
-# sing-me-a-song
+# sing-me-a-song 🎙️
 
 Ready to recommend your favorite songs?
 
